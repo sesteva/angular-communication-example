@@ -11,9 +11,11 @@ angular.module('projectApp')
     return {
       templateUrl: 'scripts/mymenu/mymenu.html',
       restrict: 'E',
+      scope:{},
       link: function postLink(scope, element, attrs) {
 
-        scope.ui ={
+        scope.menu ={
+            data: {},
             city: 'dallas,us'
         }
         scope.pepe = function(){};
@@ -21,18 +23,18 @@ angular.module('projectApp')
         scope.getData = function(city, fresh){
             // If we want to refresh, we shall tell all interested components
             if(fresh){
-                scope.ui.city = city;
+                scope.menu.city = city;
                 $rootScope.$broadcast('menu:cityUpdate', {'city': city});
             }
             myWeatherService.retrieveWeather(city, fresh).then(function(response){
                 console.log(response);
-                scope.ui.weather = response;
+                scope.menu.data = response.name;
             });
 
         };
 
         // default query
-        scope.getData(scope.ui.city);
+        scope.getData(scope.menu.city);
 
       }
     };

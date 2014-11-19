@@ -11,22 +11,24 @@ angular.module('projectApp')
     return {
       templateUrl: 'scripts/mycoordinates/mycoordinates.html',
       restrict: 'E',
+      scope:{},
       link: function postLink(scope, element, attrs) {
 
-          scope.ui ={
-              weather: {},
+          scope.coordinates ={
+              data: {},
               city: 'dallas,us'
           }
 
           scope.getData = function(city, fresh){
+              console.log('getting')
               myWeatherService.retrieveWeather(city, fresh).then(function(response){
-                  scope.ui.weather = response;
+                  scope.coordinates.data = response.coord;
               });
           }
 
           // default query
           // It may  be the first one or may be getting from angular's cache
-          scope.getData(scope.ui.city);
+          scope.getData(scope.coordinates.city);
 
           scope.$on('menu:cityUpdate', function(event, args){
               scope.getData(args.city);
