@@ -17,10 +17,10 @@ Those are the kind of questions we attempt to answer on this example.
     </div>
     <div class="row">
       <div class="col-xs-12 col-sm-6 col-md-8">
-        <my-coordinates-one></my-coordinates-one>
+        <my-coordinates></my-coordinates>
       </div>
       <div class="col-xs-6 col-md-4">
-        <my-description-two></my-description-two>
+        <my-description></my-description>
       </div>
     </div>
     

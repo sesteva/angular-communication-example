@@ -7,7 +7,7 @@
  * # myComponentOne
  */
 angular.module('projectApp')
-  .directive('myComponentOne', function (myWeatherService) {
+  .directive('myCoordinates', function (myWeatherService) {
     return {
       templateUrl: 'scripts/mycoordinates/mycoordinates.html',
       restrict: 'E',

@@ -7,7 +7,7 @@
  * # myComponentTwo
  */
 angular.module('projectApp')
-  .directive('myComponentTwo', function () {
+  .directive('myDescription', function () {
     return {
       templateUrl: 'scripts/mydescription/mydescription.html',
       restrict: 'E',
