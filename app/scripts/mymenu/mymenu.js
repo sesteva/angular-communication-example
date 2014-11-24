@@ -18,8 +18,6 @@ angular.module('projectApp')
             data: {},
             city: 'dallas,us'
         }
-        scope.pepe = function(){};
-
         scope.getData = function(city, fresh){
             // If we want to refresh, we shall tell all interested components
             if(fresh){
